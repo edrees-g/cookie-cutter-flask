@@ -1,4 +1,4 @@
-# Cookie Cutter Flask
+# Cookie Cutter Flask (Work in progress)
 This is a cookie cutter (i.e., template or example) on how I like to setup my Flask projects.
 > **Note: This is structured for a Model-View-Controller (MVC) architecture.
 
