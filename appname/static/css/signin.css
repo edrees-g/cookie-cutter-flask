@@ -1,0 +1,43 @@
+.card {
+    color: white;
+    border: solid 1px rgb(219, 219, 219);
+    background-color: rgb(135, 200, 235);
+}
+
+.form-control {
+    background-color: rgb(250, 250, 250);
+}
+
+.form-control:focus {
+    border: solid 2px lightblue;
+    background-color: rgb(255, 255, 255);
+}
+
+.divider:after, .divider:before {
+    flex: 1;
+    height: 1px;
+    content: "";
+    background: white;
+}
+
+#signinButton {
+    width: 100%;
+}
+
+#forgotPasswordLink {
+    color: white;
+    text-decoration: none;
+}
+
+#forgotPasswordLink:hover {
+    text-decoration: underline;
+}
+
+#signupLink {
+    text-decoration: none;
+    color: rgb(0, 148, 241);
+}
+
+#signupLink:hover {
+    text-decoration: underline;
+}

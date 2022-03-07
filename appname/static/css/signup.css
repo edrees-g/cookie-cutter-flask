@@ -1,0 +1,42 @@
+.card {
+    color: white;
+    background-color: rgb(135, 200, 235);
+}
+
+.form-control {
+    background-color: rgb(250, 250, 250);
+}
+
+.form-control:focus {
+    border: solid 2px lightblue;
+    background-color: rgb(255, 255, 255);
+}
+
+.divider:after, .divider:before {
+    flex: 1;
+    height: 1px;
+    content: "";
+    background: white;
+}
+
+#signupButton {
+    width: 100%;
+}
+
+#contactusLink {
+    color: white;
+    text-decoration: none;
+}
+
+#contactusLink:hover {
+    text-decoration: underline;
+}
+
+#signinLink {
+    text-decoration: none;
+    color: rgb(0, 148, 241);
+}
+
+#signinLink:hover {
+    text-decoration: underline;
+}

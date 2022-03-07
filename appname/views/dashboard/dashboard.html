@@ -1,0 +1,17 @@
+{% extends "templates/index.html" %}
+
+{% block head %}
+{% endblock head %}
+
+{% block main %}
+    Hello {{ email }} your permission is {{ permission }}
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        {% if permission == "admin" %}
+            <button type="button" onclick="examplesButtonClick()" class="btn btn-primary me-2">Example</button>
+        {% endif %}
+    </div>
+{% endblock main %}
+
+{% block script %}
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock script %}

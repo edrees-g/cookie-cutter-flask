@@ -1,0 +1,13 @@
+.examples-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.table {
+    margin-top: 5px;
+}
+
+#examplesNavigation {
+    border-bottom: none;
+}

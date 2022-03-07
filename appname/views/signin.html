@@ -1,0 +1,73 @@
+{% extends "templates/index.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signin.css') }}">
+{% endblock head %}
+
+{% block main %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                {% if category == 'success-signout' %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>{{ message }}</strong>
+                        <button type="button" data-bs-dismiss="alert" aria-label="Close" class="btn-close"></button>
+                    </div>
+                {% else %}
+                    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                        <strong>{{ message }}</strong> Don't have an account? <a href="{{ url_for('signup_controller.signup') }}" class="alert-link">Sign up now.</a>
+                        <button type="button" data-bs-dismiss="alert" aria-label="Close" class="btn-close"></button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <div class="container py-5">
+        <div class="row d-flex justify-content-center align-items-center mt-5">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <form action="{{ url_for('signin_controller.signin') }}" method="post" class="card mb-2">
+                    <div class="card-body px-5 pt-5 text-center">
+                        <div class="mb-5 mt-4">
+                            <h2 class="fw-bold mb-2">Sign In</h2>
+                            <p class="mb-5">Please enter your credentials!</p>
+
+                            <div class="form-outline mb-4">
+                                <input type="email" name="email" placeholder="Email" class="form-control form-control-lg">
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <input type="password" name="password" placeholder="Password" class="form-control form-control-lg">
+                            </div>
+
+                            <div class="form-check d-flex justify-content-left align-items-left mb-4">
+                                <input id="flexCheckDefault" name="remember_me" type="checkbox" value="True" class="form-check-input">
+                                <label for="flexCheckDefault" class="form-check-label">&nbsp; Remember me?</label>
+                            </div>
+
+                            <button id="signinButton" type="submit" class="btn btn-outline-light btn-lg btn-block">Sign In</button>
+
+                            <div class="divider d-flex align-items-center my-4">
+                                <p class="text-center fw-bold mx-3 mb-0">OR</p>
+                            </div>
+
+                            <p class="small mb-0 pb-lg-2">
+                                <a id="forgotPasswordLink" href="#">Forgot password?</a>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="card">
+                    <div class="card-body px-5 py-4 text-center">
+                        <div>
+                            <p class="mb-0">Don't have an account? <a id="signupLink" href="{{ url_for('signup_controller.signup') }}" class="fw-bold">Sign up</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock main %}
+
+{% block script %}
+{% endblock script %}

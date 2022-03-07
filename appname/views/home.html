@@ -1,0 +1,21 @@
+{% extends "templates/index.html" %}
+
+{% block head %}
+{% endblock head %}
+
+{% block main %}
+    <div class="container d-flex justify-content-center align-items-center my-auto vh-100 h-100">
+        <div class="btn-group">
+            <div class="signin me-2">
+                <button type="button" onclick="signinButtonClick()" class="btn btn-primary">Sign In</button>
+            </div>
+            <div class="signup">
+                <button type="button" onclick="signupButtonClick()" class="btn btn-secondary">Sign Up</button>
+            </div>
+        </div>
+    </div>
+{% endblock main %}
+
+{% block script %}
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+{% endblock script %}
